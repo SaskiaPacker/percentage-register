@@ -36,35 +36,21 @@ def input_data_total():
     """
     Gets the user to input the total number of students/employees in the whole company
     """
-    while True:
-        print("Please enter the total number of students in the school.\n")
-        print("For example: 736\n")
+    print("Please enter the total number of students in the school.\n")
+    print("For example: 736\n")
 
-        total = input("Enter the total here: \n")
-        print(total)
-        
-        if convert_data_values(total):
-            print("Data is Valid")
-            break
-        return total
+    total = int(input("Enter the total here: \n"))
+    print("Data is Valid")
+
+    return total
 
 
 
 
-def input_data_absent():
 
-
-def convert_data_values():
-
-
-    
 
 def main():
-    """
-    Run all program functions
-    """
     name_input()
     input_data_total()
-
 
 main()
