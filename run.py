@@ -20,4 +20,61 @@ sales = SHEET.worksheet('average_absence_for_week')
 
 data = sales.get_all_values()
 
-print(data)
+def name_input():
+    """
+    User inputs name and is asked to then input the data 
+    """
+
+    name = input("Please Enter your name: ")
+
+    print("------")
+    print(f"Welcome {name}\n")
+
+
+
+def input_data_total():
+    """
+    Gets the user to input the total number of students/employees in the whole company
+    """
+    while True:
+        print("Please enter the total number of students in the school.\n")
+        print("For example: 736\n")
+
+        total = input("Enter the total here: \n")
+        print(total)
+        
+        if convert_data_values(total):
+            print("Data is Valid")
+            break
+        return total
+
+
+
+
+def input_data_absent():
+    """
+    Gets the user to input the data and returns the toal numbers of absentees 
+    """
+
+
+def convert_data_values(values):
+    """
+    Create a try statment and inside the if statement convert strings into integ
+    """
+
+    
+
+
+
+
+
+
+def main():
+    """
+    Run all program functions
+    """
+    name_input()
+    input_data_total()
+
+
+main()
