@@ -52,22 +52,12 @@ def input_data_total():
 
 
 def input_data_absent():
-    """
-    Gets the user to input the data and returns the toal numbers of absentees 
-    """
 
 
-def convert_data_values(values):
-    """
-    Create a try statment and inside the if statement convert strings into integ
-    """
+def convert_data_values():
+
 
     
-
-
-
-
-
 
 def main():
     """
