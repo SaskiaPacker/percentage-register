@@ -36,21 +36,41 @@ def input_data_total():
     """
     Gets the user to input the total number of students/employees in the whole company
     """
+    pupil = "pupils"
     print("Please enter the total number of students in the school.\n")
-    print("For example: 736\n")
+    print(f"For example: 736 {pupil}\n")
 
     total = int(input("Enter the total here: \n"))
-    print("Data is Valid")
+    print("Data is Valid\n")
 
     return total
 
 
 
+def input_data_absent():
+    """
+    Gets the user to input the data and adds all of the numbers together
+    to get a total number of absent pupils, per year
+    """
+
+    print("Please enter the amount of absent pupils per year\n")
+    print("starting with year 7 and ending with year 11\n")
+
+    year_group = "year 7"
+    print(f"For example: {year_group}: 12 absent\n")
+
+    # while True:
+
+        # try: 
+    a,b,c,d,e = input("Enter your values\n ").split()
+    print(" Year 7: {} absent, Year 8: {} absent, Year 9: {} absent, Year 10: {} absent, Year 11: {} absent".format(a,b,c,d,e))
+    print()
 
 
 
 def main():
     name_input()
     input_data_total()
+    input_data_absent()
 
 main()
