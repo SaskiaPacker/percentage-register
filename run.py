@@ -8,7 +8,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
@@ -20,6 +20,7 @@ sales = SHEET.worksheet('average_absence_for_week')
 
 data = sales.get_all_values()
 
+
 def name_input():
     """
     User inputs name and is asked to then input the data 
@@ -29,7 +30,6 @@ def name_input():
 
     print("------")
     print(f"Welcome {name}\n")
-
 
 
 def input_data_total():
@@ -46,7 +46,6 @@ def input_data_total():
     return total
 
 
-
 def input_data_absent():
     """
     Gets the user to input the data and adds all of the numbers together
@@ -59,18 +58,28 @@ def input_data_absent():
     year_group = "year 7"
     print(f"For example: {year_group}: 12 absent\n")
 
-    # while True:
+    data_input = ''
+    while True:
+        data_input = input("Enter your values in here. Enter done to finish\n")
+        data_list = data_input.split(",")
+        if data_list == "year 11:": break
+        print("Data is valid")
 
-        # try: 
-    a,b,c,d,e = input("Enter your values\n ").split()
-    print(" Year 7: {} absent, Year 8: {} absent, Year 9: {} absent, Year 10: {} absent, Year 11: {} absent".format(a,b,c,d,e))
-    print()
+        year_values = ["year 7:", "year 8:", "year 9:", "year 10:", "year 11:"]
+        for x in year_values:
+            print(x) 
+            print(data_list)
+            
 
+# a,b,c,d,e = input("Enter your values\n ").split()
+# print(" Year 7: {} absent, Year 8: {} absent, Year 9: {} absent, Year 10: {} absent, Year 11: {} absent".format(a,b,c,d,e))
+# print()
 
 
 def main():
     name_input()
     input_data_total()
     input_data_absent()
+
 
 main()
