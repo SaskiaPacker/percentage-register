@@ -46,10 +46,10 @@ def input_data_total():
     return total
 
 
-def input_data_absent():
+def input_data_absent(data_addition):
     """
     Gets the user to input the data and adds all of the numbers together
-    to get a total number of absent pupils, per year
+    to get a total number of absent pupils
     """
 
     print("Please enter the amount of absent pupils per year\n")
@@ -58,6 +58,7 @@ def input_data_absent():
     year_group = "year 7"
     print(f"For example: {year_group}: 12 absent\n")
 
+    final_sum = 0
     data_input = ''
     while True:
         year_values = 7, 8, 9, 10, 11
@@ -65,14 +66,28 @@ def input_data_absent():
             data_input = input("Enter your values in here.\n").split()
             print("year "+ str(x)+":" + str(data_input) + " absent")
         print("Data is valid")
+        print(data_addition)
 
         break 
+
+def data_addition():
+    """
+    Adds up the input data and displays the total
+    """
+    final_sum = 0
+    data_input = ''
+    print("Calculating total number of students absent")
+    final_sum = str(final_sum) + str(data_input)
+    print(final_sum)
+
+    
 
 
 def main():
     name_input()
     input_data_total()
     input_data_absent()
+    data_addition()
 
 
 main()
