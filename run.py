@@ -60,24 +60,13 @@ def input_data_absent():
 
     data_input = ''
     while True:
-
-        data_input = input("Enter your values in here. Enter done to finish\n")
-        data_list = data_input.split(",")
-
-        year_values = ["year 7", "year 8", "year 9", "year 10", "year 11"]
-        for x in year_values:    
-            print(x + " " + "absent:") 
-            print(data_list)
+        year_values = 7, 8, 9, 10, 11
+        for x in range(7,12):  
+            data_input = input("Enter your values in here.\n").split()
+            print("year "+ str(x)+":" + str(data_input) + " absent")
         print("Data is valid")
 
         break 
-
-            
-            
-
-# a,b,c,d,e = input("Enter your values\n ").split()
-# print(" Year 7: {} absent, Year 8: {} absent, Year 9: {} absent, Year 10: {} absent, Year 11: {} absent".format(a,b,c,d,e))
-# print()
 
 
 def main():
