@@ -3,6 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import gspread
 from google.oauth2.service_account import Credentials
+import itertools
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -57,30 +58,40 @@ def input_data_absent():
     year_group = "year 7"
     print(f"For example: {year_group}: 12 absent\n")
 
-    data_input = ''
+    input_list = []
     while True:
         year_values = 7, 8, 9, 10, 11
         for x in range(7,12):  
-            data_input = input("Enter your values in here.\n").split()
-            y = ''.join(data_input)
-            z = int(y)
-            print("year " + str(x)+ " absent:")
-            print(z)
+            data_input = input("Enter your values in here. Type q to quit\n").split()
+            input_list.extend(data_input)
+            print("year " + str(x) + " absent:")
+            print(data_input)
+            print(input_list)
+            
+            #print(data_input)
+            
+            #y = ''.join(data_input)
+            #z = int(y)
+            
+            #print("year " + str(x)+ " absent:")
+            #print(z)
 
-        if data_error_input(z):
+        if data_error_input(data_input):
             print("Data is valid")
         
         break 
+    #print("Data is valid!")
 
-    return z
+    #return z
+
 
 def data_error_input(values):
     """
     Throws a valueError if a string is entered into the data_input variable
     """
     try:
-        if values == str():
-            raise ValueError(f"please enter a number, you entered {values}")
+        if values != 1:
+            raise ValueError(f"please enter a number, you entered {len(values)}")
 
     except ValueError as e: 
         print(f"invalid data {e}, please try again.\n")
@@ -89,6 +100,10 @@ def data_error_input(values):
     return True
 
 
+
+
+
+    
 
 
     
