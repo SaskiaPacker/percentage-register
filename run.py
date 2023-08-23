@@ -46,10 +46,9 @@ def input_data_total():
     return total
 
 
-def input_data_absent(addition):
+def input_data_absent():
     """
-    Gets the user to input the data and adds all of the numbers together
-    to get a total number of absent pupils
+    Gets the user to input the data and converts all the data to integeres
     """
 
     print("Please enter the amount of absent pupils per year\n")
@@ -67,20 +66,29 @@ def input_data_absent(addition):
             z = int(y)
             print("year " + str(x)+ " absent:")
             print(z)
-        print("Data is valid")
-        data_addition = len(z)
-        print(data_addition)
 
+        if data_error_input(z):
+            print("Data is valid")
+        
         break 
 
-def data_addition():
+    return z
+
+def data_error_input(values):
     """
-    Adds up the input data and displays the total
+    Throws a valueError if a string is entered into the data_input variable
     """
-    data_input = ''
-    print("Calculating total number of students absent")
-    final_sum = len(z)
-    print(final_sum)
+    try:
+        if values == str():
+            raise ValueError(f"please enter a number, you entered {values}")
+
+    except ValueError as e: 
+        print(f"invalid data {e}, please try again.\n")
+        return False
+
+    return True
+
+
 
 
     
@@ -90,7 +98,7 @@ def main():
     name_input()
     input_data_total()
     input_data_absent()
-    addition = data_addition()
+
 
 
 main()
