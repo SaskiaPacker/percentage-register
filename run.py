@@ -62,58 +62,45 @@ def input_data_absent():
     while True:
         year_values = 7, 8, 9, 10, 11
         for x in range(7,12):  
-            data_input = input("Enter your values in here. Type q to quit\n").split()
+            data_input = input("Enter your values in here. Type q to quit\n")
             input_list.extend(data_input)
             print("year " + str(x) + " absent:")
             print(data_input)
-            print(input_list)
-            
-            #print(data_input)
-            
-            #y = ''.join(data_input)
-            #z = int(y)
-            
-            #print("year " + str(x)+ " absent:")
-            #print(z)
+            #print(input_list)
 
-        if data_error_input(data_input):
-            print("Data is valid")
+        #if data_error_input(input_list):
+            #print("Data is valid")
         
         break 
     #print("Data is valid!")
-
-    #return z
+    total_data_list = input_list
+    data_error_input(total_data_list)
 
 
 def data_error_input(values):
     """
-    Throws a valueError if a string is entered into the data_input variable
+    inside the try statement checks if integers inside the list are integers
     """
+    print(values)
+
     try:
-        if values != 1:
-            raise ValueError(f"please enter a number, you entered {len(values)}")
+        [int(value) for value in values]
+        if all(isinstance(values, int) for num in values):
+            print("Yes elements are list")
+            
+        else:
+            print("try again")
 
-    except ValueError as e: 
-        print(f"invalid data {e}, please try again.\n")
-        return False
-
-    return True
-
-
-
+    except ValueError as e:
+        print(e)
 
 
-    
 
-
-    
 
 
 def main():
     name_input()
     input_data_total()
     input_data_absent()
-
-
 
 main()
