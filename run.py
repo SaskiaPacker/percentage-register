@@ -60,39 +60,50 @@ def input_data_absent():
 
     input_list = []
     while True:
-        year_values = 7, 8, 9, 10, 11
         for x in range(7,12):  
-            data_input = input("Enter your values in here. Type q to quit\n")
-            input_list.extend(data_input)
+            data_input = input("Enter your values in here. \n")
+            input_list.append(data_input)
             print("year " + str(x) + " absent:")
             print(data_input)
-            #print(input_list)
+            print(input_list)
+            print(type(input_list)) 
 
         #if data_error_input(input_list):
             #print("Data is valid")
         
         break 
+    
     #print("Data is valid!")
     total_data_list = input_list
     data_error_input(total_data_list)
+
 
 
 def data_error_input(values):
     """
     inside the try statement checks if integers inside the list are integers
     """
-    print(values)
+    #print(values)
 
     try:
         [int(value) for value in values]
-        if all(isinstance(values, int) for num in values):
-            print("Yes elements are list")
+        if len(values) == 5:
+            raise ValueError (
+        "this has worked"
+        )
             
         else:
             print("try again")
 
     except ValueError as e:
         print(e)
+
+    try: 
+        if all(values.isdigit() for value in values):
+            print("Yes elements are list")
+            
+        except:
+            print("hello")
 
 
 
