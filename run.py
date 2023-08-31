@@ -42,69 +42,24 @@ def input_data_total():
     print(f"For example: 736 {pupil}\n")
 
     total = int(input("Enter the total here: \n"))
+    print("------")
     print("Data is Valid\n")
 
     return total
 
-
-def input_data_absent():
+def input_year():
     """
-    Gets the user to input the data and converts all the data to integeres
+    Gets input from the user for the total number of absentees
+    per year
     """
 
-    print("Please enter the amount of absent pupils per year\n")
-    print("starting with year 7 and ending with year 11\n")
+    print("Please enter the number of absent students, per year\n")
+    print("Starting with year 7 and ending with year 11\n")
+    print("For example: 10,20,30,40,50")
+    print("------")
 
-    year_group = "year 7"
-    print(f"For example: {year_group}: 12 absent\n")
-
-    input_list = []
-    while True:
-        for x in range(7,12):  
-            data_input = input("Enter your values in here. \n")
-            input_list.append(data_input)
-            print("year " + str(x) + " absent:")
-            print(data_input)
-            print(input_list)
-            print(type(input_list)) 
-
-        #if data_error_input(input_list):
-            #print("Data is valid")
-        
-        break 
-    
-    #print("Data is valid!")
-    total_data_list = input_list
-    data_error_input(total_data_list)
-
-
-
-def data_error_input(values):
-    """
-    inside the try statement checks if integers inside the list are integers
-    """
-    #print(values)
-
-    try:
-        [int(value) for value in values]
-        if len(values) == 5:
-            raise ValueError (
-        "this has worked"
-        )
-            
-        else:
-            print("try again")
-
-    except ValueError as e:
-        print(e)
-
-    try: 
-        if all(values.isdigit() for value in values):
-            print("Yes elements are list")
-            
-        except:
-            print("hello")
-
+    input_data = input("Enter your data here: \n")
+    print(f"The data provided is {input_data}")
 
 
 
@@ -112,6 +67,7 @@ def data_error_input(values):
 def main():
     name_input()
     input_data_total()
-    input_data_absent()
+    input_year()
 
+   
 main()
