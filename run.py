@@ -72,6 +72,7 @@ def data_validation(values):
     if more than 5 values
     """
     try:
+        [int(value) for value in values]
         if len(values) != 5:
             raise ValueError(f"Please enter 5 values, you entered {len(values)}")
 
