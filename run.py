@@ -54,15 +54,20 @@ def input_year():
     Gets input from the user for the total number of absentees
     per year
     """
-
-    print("Please enter the number of absent students, per year\n")
-    print("Starting with year 7 and ending with year 11\n")
-    print("For example: 10,20,30,40,50")
-    print("------")
-
-    input_data = input("Enter your data here: \n")
-    input_data_list = input_data.split(",")
-    data_validation(input_data_list)
+    
+    while True:
+        print("Please enter the number of absent students, per year\n")
+        print("Starting with year 7 and ending with year 11\n")
+        print("For example: 10,20,30,40,50")
+        print("------")
+        
+        input_data = input("Enter your data here: \n")
+        input_data_list = input_data.split(",")
+        
+        if data_validation(input_data_list):
+            print("Data is Valid!")
+            print(total_list_absentees)
+            break
 
 
 def data_validation(values):
@@ -78,6 +83,16 @@ def data_validation(values):
 
     except ValueError as e:
         print(f"Ivalid data: {e}, please try again.\n")
+        return False
+
+    return True
+
+
+def total_list_absentees(absentees):
+    """
+    prints out the total number of absentees per year
+    """
+    print(absentees)
 
 
 
@@ -87,6 +102,6 @@ def main():
     name_input()
     input_data_total()
     input_year()
-
+    total_list_absentees()
    
 main()
