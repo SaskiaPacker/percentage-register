@@ -42,8 +42,10 @@ def input_data_total():
     print(f"For example: 736 {pupil}\n")
 
     total = int(input("Enter the total here: \n"))
-    print("------")
+    print(f"{total} pupils\n")
     print("Data is Valid\n")
+    print("------")
+
 
     return total
 
@@ -59,7 +61,23 @@ def input_year():
     print("------")
 
     input_data = input("Enter your data here: \n")
-    print(f"The data provided is {input_data}")
+    input_data_list = input_data.split(",")
+    data_validation(input_data_list)
+
+
+def data_validation(values):
+    """
+    gets values from user and changes them to integers,
+    checks for only 5 values and will throw back ValueError
+    if more than 5 values
+    """
+    try:
+        if len(values) != 5:
+            raise ValueError(f"Please enter 5 values, you entered {len(values)}")
+
+    except ValueError as e:
+        print(f"Ivalid data: {e}, please try again.\n")
+
 
 
 
