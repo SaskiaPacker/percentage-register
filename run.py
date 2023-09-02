@@ -49,6 +49,7 @@ def input_data_total():
 
     return total
 
+
 def input_year():
     """
     Gets input from the user for the total number of absentees
@@ -66,8 +67,9 @@ def input_year():
         
         if data_validation(input_data_list):
             print("Data is Valid!")
-            print(total_list_absentees)
             break
+
+    return input_data_list
 
 
 def data_validation(values):
@@ -87,12 +89,18 @@ def data_validation(values):
 
     return True
 
+def update_data_sheet(data):
+    """
+    updates the google doc with the input data 
+    """
 
-def total_list_absentees(absentees):
-    """
-    prints out the total number of absentees per year
-    """
-    print(absentees)
+    print("Updating absent per year worksheet...\n")
+    input_year_list = SHEET.worksheet("absent_per_year")
+    input_year_list.append_row(data)
+    print("Absent per year worksheet updated.\n")
+
+
+
 
 
 
@@ -101,7 +109,7 @@ def total_list_absentees(absentees):
 def main():
     name_input()
     input_data_total()
-    input_year()
-    total_list_absentees()
+    data = input_year()
+    update_data_sheet(data)
    
 main()
