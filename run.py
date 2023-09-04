@@ -32,6 +32,7 @@ def name_input():
     print("------")
     print(f"Welcome {name}\n")
 
+    
 
 def input_data_total():
     """
@@ -46,8 +47,6 @@ def input_data_total():
     print("Data is Valid\n")
     print("------")
 
-
-    return total
 
 
 def input_year():
@@ -68,6 +67,8 @@ def input_year():
         if data_validation(input_data_list):
             print("Data is Valid!")
             break
+
+    calculate_percentage_absent(input_data_list)
 
     return input_data_list
 
@@ -100,6 +101,24 @@ def update_data_sheet(data):
     print("Absent per year worksheet updated.\n")
 
 
+def calculate_percentage_absent(list_input):
+    """
+    calculates input data list and input_data_total 
+    and calculates the percentage of the absentees for that week
+    """
+
+    list_input = 0
+    print(list_input)
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -111,5 +130,6 @@ def main():
     input_data_total()
     data = input_year()
     update_data_sheet(data)
+    calculate_percentage_absent(list_input)
    
 main()
