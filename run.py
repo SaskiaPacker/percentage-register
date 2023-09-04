@@ -107,7 +107,7 @@ def calculate_percentage_absent(list_input):
     and calculates the percentage of the absentees for that week
     """
 
-    list_input = 0
+    
     print(list_input)
 
 
