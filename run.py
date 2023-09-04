@@ -106,23 +106,18 @@ def calculate_percentage_absent(list_input):
     calculates input data list and input_data_total 
     and calculates the percentage of the absentees for that week
     """
-
-    
+    list_input = []
+    map(int, list_input)
     print(list_input)
+    total = 0 
+
+    for i in range(0, len(list_input)):
+        total = total + list_input[1]
+
+    print("Total absentees is", total)
 
 
     
-
-
-
-
-
-
-
-
-
-
-
 
 
 def main():
