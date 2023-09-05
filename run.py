@@ -1,6 +1,6 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+# Structure and some code of project taken Love sandwiches 
+# Sourced help from a friend who is a developer, who will 
+# be credited in my ReadMe file.
 import gspread
 from google.oauth2.service_account import Credentials
 import itertools
@@ -40,9 +40,9 @@ def input_data_total():
     """
     Gets the user to input the total number of students/employees in the whole company
     """
-    pupil = "pupils"
+    
     print("Please enter the total number of students in the school.\n")
-    print(f"For example: 736 {pupil}\n")
+    print("For example: 736 pupils\n")
 
     total = int(input("Enter the total here: \n"))
     print(f"{total} pupils\n")
@@ -125,7 +125,7 @@ def calculate_percentage_absent(list_input):
 
 
 def main():
-    name_input()
+    name = name_input()
     input_data_total()
     data = input_year()
     update_data_sheet(data)
