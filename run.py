@@ -72,8 +72,6 @@ def input_year():
             print("Data is Valid!")
             break
 
-    calculate_percentage_absent(input_data_list)
-
     return input_data_list
 
 
@@ -94,24 +92,24 @@ def data_validation(values):
 
     return True
 
-def update_data_sheet(data):
+def update_data_sheet(list_absences):
     """
     updates the google doc with the input data 
     """
 
     print("Updating absent per year worksheet...\n")
     input_year_list = SHEET.worksheet("absent_per_year")
-    input_year_list.append_row(data)
+    input_year_list.append_row(list_absences)
     print("Absent per year worksheet updated.\n")
 
 
-def calculate_percentage_absent(list_input):
+def calculate_percentage_absent(total_pupils, list_input):
     """
     calculates input data list and input_data_total 
     and calculates the percentage of the absentees for that week
     """
-    list_input = []
-    map(int, list_input)
+
+    list_input = list(map(int, list_input))
     print(list_input)
     total = 0 
 
@@ -126,9 +124,9 @@ def calculate_percentage_absent(list_input):
 
 def main():
     name = name_input()
-    input_data_total()
-    data = input_year()
-    update_data_sheet(data)
-    calculate_percentage_absent(list_input)
+    total_pupils = input_data_total()
+    list_absences = input_year()
+    update_data_sheet(list_absences)
+    calculate_percentage_absent(total_pupils, list_absences)
    
 main()
