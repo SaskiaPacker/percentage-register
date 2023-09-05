@@ -32,6 +32,8 @@ def name_input():
     print("------")
     print(f"Welcome {name}\n")
 
+    return name
+
     
 
 def input_data_total():
@@ -46,6 +48,8 @@ def input_data_total():
     print(f"{total} pupils\n")
     print("Data is Valid\n")
     print("------")
+
+    return total
 
 
 
